@@ -13,7 +13,7 @@ st.title(" 🛸 Youtube Keywords Prediction")
 
 country = st.selectbox(
          'Country',
-         ('Start', 'Germany', 'India', 'Great Britain', 'Canada', 'USA', 'France'), )
+         ('Start', 'Germany', 'India', 'United Kingdom', 'Canada', 'USA', 'France'), )
 
 # get keywords by country
 key_words = ya.get_words(country)
@@ -34,7 +34,7 @@ if country != "Start":
         else:
             words += keywords[i]
 
-    st.write('You selected:', words)
+    st.header('You selected: '+ words)
     
     
 # get categories
@@ -53,8 +53,8 @@ if country != "Start":
      ('Likes', 'Likes Ratio', 'Views'))
 
     y, r2, mae = ya.create_data_predict(keywords, country, category, target)
+    st.header("Your prediction: " + str(y))
     
-    st.write('Your prediction:', y)
     st.write('R2:', r2)
     st.write('MAE:', mae)
 

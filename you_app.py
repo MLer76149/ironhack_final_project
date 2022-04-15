@@ -63,7 +63,7 @@ def get_words(lang):
     elif lang == "India":
         return list(words_in.columns)
     
-    elif lang == "Great Britain":
+    elif lang == "United Kingdom":
         return list(words_gb.columns)
     
     
@@ -89,7 +89,7 @@ def get_categories(lang):
         
         return list(cat_choose_in["category"])
     
-    elif lang == "Great Britain":
+    elif lang == "United Kingdom":
         
         return list(cat_choose_gb["category"])
     
@@ -314,7 +314,7 @@ def create_data_predict(keywords, lang, category, target):
             return np.round(float(y), 2), rtwo, mae
         
         
-        elif lang == "Great Britain":
+        elif lang == "United Kingdom":
             
             with open("final_models/error_dict_GB_EN.json") as f:
                 data = json.load(f)
@@ -371,7 +371,7 @@ def __predict(df_predict, lang, target):
         
         if target == "Likes_Rate":
             
-            y = y * 100
+            y = int(y * 100)
 
         return y
     
@@ -390,7 +390,7 @@ def __predict(df_predict, lang, target):
         
         if target == "Likes_Rate":
             
-            y = y * 100
+            y = int(y * 100)
 
         return y
     
@@ -409,7 +409,7 @@ def __predict(df_predict, lang, target):
         
         if target == "Likes_Rate":
             
-            y = y * 100
+            y = int(y * 100)
 
         return y
     
@@ -428,7 +428,7 @@ def __predict(df_predict, lang, target):
         
         if target == "Likes_Rate":
             
-            y = y * 100
+            y = int(y * 100)
 
         return y
     
@@ -447,12 +447,12 @@ def __predict(df_predict, lang, target):
         
         if target == "Likes_Rate":
             
-            y = y * 100
+            y = int(y * 100)
 
         return y
     
     
-    elif lang == "Great Britain":
+    elif lang == "United Kingdom":
     
         filename = "final_models/GB_EN_" + target + "_random_forest.sav"
 
@@ -466,7 +466,7 @@ def __predict(df_predict, lang, target):
         
         if target == "Likes_Rate":
             
-            y = y * 100
+            y = int(y * 100)
 
         return y
     
